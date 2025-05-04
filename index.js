@@ -26,7 +26,10 @@ submit.onclick= function(){
     if (uc.checked) generators.push(randomUpperCaseLetters);
     if (num.checked) generators.push(randomNumber);
     if (sc.checked) generators.push(randomSpecialCharacters);
-
+    if (generators.length === 0) {
+        alert("Please select at least one character type.");
+        return;
+    }
     for (let i = 0; i < lengthInput.value; i++) {
         answer.push(shuffleEverything(generators));
     }
